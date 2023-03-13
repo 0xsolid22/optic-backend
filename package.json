@@ -1,0 +1,41 @@
+{
+  "name": "dreamos-backend",
+  "version": "1.0.0",
+  "description": "\"# DreamOS-Backend\"",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tsc",
+    "start": "node dist/index.js",
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Project-DOS/DreamOS-Backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Project-DOS/DreamOS-Backend/issues"
+  },
+  "homepage": "https://github.com/Project-DOS/DreamOS-Backend#readme",
+  "dependencies": {
+    "@prisma/client": "^4.6.1",
+    "body-parser": "^1.20.1",
+    "bs58": "^5.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "ethers": "^5.7.2",
+    "express": "^4.18.2",
+    "prisma": "^4.6.1",
+    "tweetnacl": "^1.0.3"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.14",
+    "@types/node": "^18.11.9",
+    "concurrently": "^7.6.0",
+    "nodemon": "^2.0.20",
+    "typescript": "^4.9.3"
+  }
+}

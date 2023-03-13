@@ -1,0 +1,107 @@
+export const VOTING_CONTRACT = '0x94ab583Da882982eaA891d3E150a2582342A178c';
+
+export const VOTING_ABI = [
+  {
+    inputs: [
+      { internalType: 'uint256', name: '_startTime', type: 'uint256' },
+      { internalType: 'uint256', name: '_endTime', type: 'uint256' },
+      { internalType: 'uint256', name: '_candidatesCount', type: 'uint256' },
+    ],
+    stateMutability: 'nonpayable',
+    type: 'constructor',
+  },
+  { inputs: [], name: 'AlreadyVoted', type: 'error' },
+  { inputs: [], name: 'InvalidCandidate', type: 'error' },
+  { inputs: [], name: 'InvalidVotingPeriod', type: 'error' },
+  { inputs: [], name: 'NotOwner', type: 'error' },
+  { inputs: [], name: 'NotRegistered', type: 'error' },
+  { inputs: [], name: 'VoteNotAvailable', type: 'error' },
+  {
+    anonymous: false,
+    inputs: [{ indexed: true, internalType: 'address', name: 'voter', type: 'address' }],
+    name: 'Registered',
+    type: 'event',
+  },
+  {
+    anonymous: false,
+    inputs: [
+      { indexed: true, internalType: 'uint256', name: 'candidate', type: 'uint256' },
+      { indexed: true, internalType: 'address', name: 'voter', type: 'address' },
+    ],
+    name: 'Voted',
+    type: 'event',
+  },
+  {
+    inputs: [],
+    name: 'candidatesCount',
+    outputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    inputs: [],
+    name: 'endTime',
+    outputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    inputs: [],
+    name: 'owner',
+    outputs: [{ internalType: 'address', name: '', type: 'address' }],
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    inputs: [{ internalType: 'address', name: 'voter', type: 'address' }],
+    name: 'register',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    inputs: [{ internalType: 'address', name: '', type: 'address' }],
+    name: 'registered',
+    outputs: [{ internalType: 'bool', name: '', type: 'bool' }],
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    inputs: [
+      { internalType: 'uint256', name: '_startTime', type: 'uint256' },
+      { internalType: 'uint256', name: '_endTime', type: 'uint256' },
+    ],
+    name: 'setVotingPeriod',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    inputs: [],
+    name: 'startTime',
+    outputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    inputs: [{ internalType: 'uint256', name: 'candidate', type: 'uint256' }],
+    name: 'vote',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    inputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
+    name: 'voteCount',
+    outputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    inputs: [{ internalType: 'address', name: '', type: 'address' }],
+    name: 'voteResult',
+    outputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
+    stateMutability: 'view',
+    type: 'function',
+  },
+];
